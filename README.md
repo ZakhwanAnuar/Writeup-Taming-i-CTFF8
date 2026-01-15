@@ -4,7 +4,7 @@
 
 - [Forensics](#forensic)
   - [73 Golongan Manusia Di Akhirat](#73golongan)
-  - [Khutbah Jumaat](#bitlocker-2)
+  - [Khutbah Jumaat](#khutbah)
   - [Guest Zip & OS What](#Guest-Zip&OS-What)
   - [Help me!](#Help-me!)
 
@@ -16,7 +16,7 @@
 We were given an encrypted 7-Zip archive.
 First, I extracted the archive’s password hash using 7z2john so it could be cracked offline with John the Ripper.
 
-![.](Forensic/Guest-Zip&OS-What/7z2john.png)
+![.](forensic/Guest-Zip&OS-What/7z2john.png)
 This converts the 7z encryption metadata into a crackable hash format.
 
 Next, I tried a wordlist attack using the popular rockyou.txt wordlist.
@@ -24,10 +24,12 @@ However, this took a long time and didn’t return any result. I assumed the pas
 
 Instead of brute-forcing blindly, I generated my own wordlist.
 I used keywords such as event names, question name, event venue.
-![.](Forensic/Guest-Zip&OS-What/passlist.png)
+
+![.](forensic/Guest-Zip&OS-What/passlist.png)
 
 Using the custom wordlist, I ran John again:
-![.](Forensic/Guest-Zip&OS-What/wordlist.png)
+
+![.](forensic/Guest-Zip&OS-What/wordlist.png)
 This time, the password was cracked successfully.
 
 password: **`ictff8`**
@@ -39,11 +41,12 @@ With the password, I extracted the contents of the archive:
 4. ictff8.vmxf
 
 These files indicate a virtual machine disk.
-![.](Forensic/Guest-Zip&OS-What/file.png)
+
+![.](forensic/Guest-Zip&OS-What/file.png)
 
 I opened the disk image using Autopsy and performed keyword searches.
 After analyzing the contents, I was able to locate the flag successfully.
-![.](Forensic/Guest-Zip&OS-What/autopsy.png)
+![.](forensic/Guest-Zip&OS-What/autopsy.png)
 
 #### 🚩 Flag: ictf8{win3.1win}
 #
