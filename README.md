@@ -21,16 +21,16 @@ So I decided to compare the files using checksums: **`md5sum *`**
 
 After generating the MD5 hashes, I noticed that one file had a different hash:
 
-![.](forensic/Guest-Zip&OS-What/md5sum.png)
+![.](forensic/73golongan/md5sum.png)
 
 This confirmed that although the files looked the same, one of them was actually different.
 
-![.](forensic/Guest-Zip&OS-What/41.png)
+![.](forensic/73golongan/41.png)
 
 To verify, I compared `41.txt` with a normal file (for example 1.txt).
 After checking the contents carefully, I found that this sentence was missing in 41.txt:
 
-![.](forensic/Guest-Zip&OS-What/1.png)
+![.](forensic/73golongan/1.png)
 
 `Kesabaran yang disertai iman kepada Allah membawa kemenangan`
 
