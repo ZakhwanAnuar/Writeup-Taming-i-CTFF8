@@ -25,6 +25,8 @@ After generating the MD5 hashes, I noticed that one file had a different hash:
 
 This confirmed that although the files looked the same, one of them was actually different.
 
+![.](forensic/Guest-Zip&OS-What/41.png)
+
 To verify, I compared `41.txt` with a normal file (for example 1.txt).
 After checking the contents carefully, I found that this sentence was missing in 41.txt:
 
